@@ -10,11 +10,10 @@ elsif ( ! $ENV{FORECASTIO_API_KEY} ) {
     plan skip_all => "FORECASTIO_API_KEY not set";
 }
 else {
-    plan tests => 1;
+    plan tests => 4;
 }
 
 use WebService::ForecastIO;
-use Data::Printer;
 
 my $fc = WebService::ForecastIO->new(
     api_key => $ENV{FORECASTIO_API_KEY},
@@ -22,8 +21,11 @@ my $fc = WebService::ForecastIO->new(
 );
 
 # Houston lat, lon
-my $c =  $fc->request( 29.7492738082192, -95.4709680410959 );
+my $json =  $fc->request( 29.7492738082192, -95.4709680410959 );
 
-p $c;
+note explain $json;
 
-isnt($c, undef, "Content is truthy"); 
+isnt($json, undef, "Content is truthy"); 
+ok(! defined $json->{minutely}, "Minutely excluded");
+ok(defined $json->{daily}->{summary}, "Daily summary defined");
+isa_ok($fc->to_timepiece($json->{currently}->{time}), 'Time::Piece', 'Yep, its');
