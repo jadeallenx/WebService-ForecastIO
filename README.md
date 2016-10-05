@@ -1,6 +1,6 @@
 # NAME
 
-WebService::ForecastIO - Perl client for api.forecast.io
+WebService::DarkSky - Perl client for api.darksky.net
 
 # VERSION
 
@@ -10,7 +10,7 @@ version 0.01
 
     use 5.014;
 
-    my $forecast = WebService::ForecastIO->new(
+    my $forecast = WebService::DarkSky->new(
             api_key => 'secret',
             units => 'si', # metric units
             exclude => 'hourly,minutely,currently,flags', # get 7 day forecast only
@@ -24,17 +24,17 @@ version 0.01
 
 # OVERVIEW
 
-This is a Perl client for [forecast.io API](https://developer.forecast.io). Forecast.io 
+This is a Perl client for [darksky.net API](https://darksky.net/dev/). DarkSky formally Forecast.io 
 applies "big data" analysis techniques to publicly available weather data including 
 radar image analysis.  One of the things it attempts to predict is _when_ certain
 weather events like rain will start, and the duration of those events.
 
 This library requires an API key which can be obtained for free from the 
-[developer web site](https://developer.forecast.io). The first 1,000 calls
+[developer web site](https://darksky.net/dev/docs) after sign up. The first 1,000 calls
 per day are allowed without charge.  (More calls can be made if payment arrangements
 are made.)
 
-See the [API docs](https://developer.forecast.io/docs/v2) for full details about
+See the [API docs](https://darksky.net/dev/docs/response) for full details about
 what data is provided and what granularity data sets are offered.
 
 __NOTE__: Errors are fatal. Please use something like [Try::Tiny](http://search.cpan.org/perldoc?Try::Tiny) if you
@@ -104,17 +104,19 @@ and returns a new [Time::Piece](http://search.cpan.org/perldoc?Time::Piece) obje
 epoch seconds by calling the `epoch()` method on it.
 
 # SEE ALSO
-
-- [WebService::ForecastIO::Request](http://search.cpan.org/perldoc?WebService::ForecastIO::Request)
-- [API docs](https://developer.forecast.io/docs/v2)
+- [WebService::DarkSky::Request](http://search.cpan.org/perldoc?WebService::DarkSky::Request)
+- [API docs](https://darksky.net/dev/)
 
 # AUTHOR
 
 Mark Allen <mrallen1@yahoo.com>
 
+# contributor Version 0.02
+Rahul Gojame <Rahul.Gojame@gmail.com>
+
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Mark Allen.
+This software is copyright (c) 2016 by Mark Allen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

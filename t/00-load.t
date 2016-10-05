@@ -3,7 +3,7 @@
 use Test::More tests => 1;
 
 BEGIN {
-    use_ok( 'WebService::ForecastIO' ) || print "Bail out!\n";
+    use_ok( 'WebService::DarkSky' ) || print "Bail out!\n";
 }
 
-diag( "Testing WebService::ForecastIO $WebService::ForecastIO::VERSION, Perl $], $^X" );
+diag( "Testing WebService::DarkSky $WebService::DarkSky::VERSION, Perl $], $^X" );

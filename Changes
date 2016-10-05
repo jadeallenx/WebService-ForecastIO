@@ -1,6 +1,7 @@
-Change history for WebService-ForecastIO
+Change history for WebService-DarkSky
 
 {{$NEXT}}
-
 0.01        2013-05-08
             Initial release
+0.02        2016-10-05
+            Update to darkSky
