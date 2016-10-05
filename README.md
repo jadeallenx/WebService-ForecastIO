@@ -104,16 +104,19 @@ and returns a new [Time::Piece](http://search.cpan.org/perldoc?Time::Piece) obje
 epoch seconds by calling the `epoch()` method on it.
 
 # SEE ALSO
-
+- [WebService::DarkSky::Request](http://search.cpan.org/perldoc?WebService::DarkSky::Request)
 - [API docs](https://darksky.net/dev/)
 
 # AUTHOR
 
+Mark Allen <mrallen1@yahoo.com>
+
+# Contributer Version 0.02
 Rahul Gojame <Rahul.Gojame@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2017 by Rahul Gojame.
+This software is copyright (c) 2016 by Mark Allen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
