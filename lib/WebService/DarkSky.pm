@@ -1,19 +1,19 @@
 use 5.014;
 
-package WebService::ForecastIO;
+package WebService::DarkSky;
 
 use Moo;
 with 'WebService::ForecastIO::Request';
 
 use Time::Piece;
 
-# ABSTRACT: Perl client for api.forecast.io
+# ABSTRACT: Perl client for api.darksky.net
 
 =head1 SYNOPSIS
 
     use 5.014;
 
-    my $forecast = WebService::ForecastIO->new(
+    my $forecast = WebService::DarkSky->new(
             api_key => 'secret',
             units => 'si', # metric units
             exclude => 'hourly,minutely,currently,flags', # get 7 day forecast only
@@ -27,18 +27,18 @@ use Time::Piece;
 
 =head1 OVERVIEW
 
-This is a Perl client for L<forecast.io API|https://developer.forecast.io>. Forecast.io 
+This is a Perl client for [darksky.net API](https://darksky.net/dev/). DarkSky formally Forecast.io 
 applies "big data" analysis techniques to publicly available weather data including 
-radar image analysis.  One of the things it attempts to predict is I<when> certain
-weather events like rain will start, and the duration of those events.
+radar image analysis.  One of the things it attempts to predict is <when> certain
+weather events like rain will start, and the duration of those events
 
 This library requires an API key which can be obtained for free from the 
-L<developer web site|https://developer.forecast.io>. The first 1,000 calls
+[developer web site](https://darksky.net/dev/docs) after sign up. The first 1,000 calls
 per day are allowed without charge.  (More calls can be made if payment arrangements
 are made.)
 
-See the L<API docs|https://developer.forecast.io/docs/v2> for full details about
-what data is provided and what granularity data sets are offered.
+See the [API docs](https://darksky.net/dev/docs/response) for full details about
+what data is provided and what granularity data sets are offered
 
 B<NOTE>: Errors are fatal. Please use something like L<Try::Tiny> if you
 want to handle errors some other way.
@@ -91,7 +91,7 @@ has 'exclude' => (
 
 =attr api_key
 
-Holds the API key for the forecast.io service.
+Holds the API key for the DarkSky.net service.
 
 =method request
 
@@ -138,9 +138,7 @@ sub parse_datetime {
 
 =over
 
-=item * L<WebService::ForecastIO::Request>
-
-=item * L<API docs|https://developer.forecast.io/docs/v2>
+=item * L<API docs|https://darksky.net/dev/>
 
 =back
 
