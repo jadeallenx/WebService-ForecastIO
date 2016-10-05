@@ -1,12 +1,12 @@
 use 5.014;
 
-package WebService::ForecastIO::Request;
+package WebService::DarkSky::Request;
 
 use Moo::Role;
 use HTTP::Tiny;
 use JSON;
 
-# ABSTRACT: Request role for WebService::ForecaseIO
+# ABSTRACT: Request role for WebService::DarkSky
 
 =head1 OVERVIEW
 
@@ -14,13 +14,13 @@ This is a role which implements requests to the L<forecast.io> API.
 
 =attr base_url
 
-The base url to connect to the web service. Defaults to L<https://api.forecast.io/forecast>
+The base url to connect to the web service. Defaults to L<https://api.darksky.net/forecast>
 
 =cut
 
 has 'base_url' => (
     is => 'ro',
-    default => sub { "https://api.forecast.io/forecast" },
+    default => sub { "https://api.darksky.net/forecast" },
 );
 
 has 'api_key' => (
@@ -38,7 +38,7 @@ has 'ua' => (
     is => 'ro',
     default => sub {
         HTTP::Tiny->new(
-            agent => "WebService::ForecastIO/$WebService::ForecastIO::VERSION ",
+            agent => "WebService::DarkSky/$WebService::DarkSky::VERSION ",
             SSL_options => {
                 SSL_hostname => "",
                 SSL_verify_mode => 0
