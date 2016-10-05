@@ -111,7 +111,7 @@ epoch seconds by calling the `epoch()` method on it.
 
 Mark Allen <mrallen1@yahoo.com>
 
-# Contributer Version 0.02
+# contributor Version 0.02
 Rahul Gojame <Rahul.Gojame@gmail.com>
 
 # COPYRIGHT AND LICENSE
