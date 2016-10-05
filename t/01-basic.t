@@ -3,7 +3,7 @@
 use strict;
 use Test::More;
 
-if (!eval { require Socket; Socket::inet_aton('api.forecast.io') }) {
+if (!eval { require Socket; Socket::inet_aton('api.darksky.net') }) {
     plan skip_all => "Cannot connect to the API server";
 } 
 elsif ( ! $ENV{FORECASTIO_API_KEY} ) {
@@ -13,9 +13,9 @@ else {
     plan tests => 4;
 }
 
-use WebService::ForecastIO;
+use WebService::DarkSky;
 
-my $fc = WebService::ForecastIO->new(
+my $fc = WebService::DarkSky->new(
     api_key => $ENV{FORECASTIO_API_KEY},
     exclude => 'flags,hourly,minutely'
 );
