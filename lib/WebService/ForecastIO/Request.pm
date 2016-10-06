@@ -20,7 +20,7 @@ The base url to connect to the web service. Defaults to L<https://api.forecast.i
 
 has 'base_url' => (
     is => 'ro',
-    default => sub { "https://api.forecast.io/forecast" },
+    default => sub { "https://api.darksky.net/forecast" },
 );
 
 has 'api_key' => (
