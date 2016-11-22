@@ -4,7 +4,7 @@ WebService::ForecastIO - Perl client for api.forecast.io
 
 # VERSION
 
-version 0.01
+version 0.02
 
 # SYNOPSIS
 
@@ -37,7 +37,7 @@ are made.)
 See the [API docs](https://developer.forecast.io/docs/v2) for full details about
 what data is provided and what granularity data sets are offered.
 
-__NOTE__: Errors are fatal. Please use something like [Try::Tiny](http://search.cpan.org/perldoc?Try::Tiny) if you
+**NOTE**: Errors are fatal. Please use something like [Try::Tiny](https://metacpan.org/pod/Try::Tiny) if you
 want to handle errors some other way.
 
 # ATTRIBUTES
@@ -48,19 +48,19 @@ This attribute overrides the default units of `us`. Available units are:
 
 - `si`
 
-Metric units (windspeed in meters/second)
+    Metric units (windspeed in meters/second)
 
 - `ca`
 
-Metric units, except windspeed in km/h
+    Metric units, except windspeed in km/h
 
 - `uk`
 
-Metric units, except windspeed in mi/h
+    Metric units, except windspeed in mi/h
 
 - `auto`
 
-Unit selection based on request IP geolocation
+    Unit selection based on request IP geolocation
 
 ## exclude
 
@@ -94,18 +94,18 @@ at midnight, January 1, 1970.)
 ## to\_timepiece
 
 A convenience method that takes epoch seconds and returns a
-new [Time::Piece](http://search.cpan.org/perldoc?Time::Piece) object.  You can stringify this object to
+new [Time::Piece](https://metacpan.org/pod/Time::Piece) object.  You can stringify this object to
 iso8601 format by calling the `datetime()` method on it.
 
 ## parse\_datetime
 
 A convenience method that takes an iso8601 formatted string
-and returns a new [Time::Piece](http://search.cpan.org/perldoc?Time::Piece) object. This object can output
+and returns a new [Time::Piece](https://metacpan.org/pod/Time::Piece) object. This object can output
 epoch seconds by calling the `epoch()` method on it.
 
 # SEE ALSO
 
-- [WebService::ForecastIO::Request](http://search.cpan.org/perldoc?WebService::ForecastIO::Request)
+- [WebService::ForecastIO::Request](https://metacpan.org/pod/WebService::ForecastIO::Request)
 - [API docs](https://developer.forecast.io/docs/v2)
 
 # AUTHOR
